@@ -4,16 +4,6 @@
 	Shortcodes
 ---------------------------------------------*/
 
-// [bcr-single id="12"]
-function bcr_single_func( $atts ) {
-	extract( shortcode_atts( array(
-		'id' => ''
-	), $atts ) );
-
-	return "foo = {$foo}";
-}
-add_shortcode( 'bnb-reviews-single', 'bcr_single_func' );
-
 // [bnb-reviews]
 function bcr_all_func( $atts ) {
 
@@ -104,16 +94,16 @@ function bcr_all_func( $atts ) {
         <span class="bnb-review-rating">
           <img src="<?= plugins_url( '_img', dirname(__FILE__))."/five_stars.png"; ?>" height="22px" / >
         </span><br />
-        <span class="bnb-review-image" itemprop="reviewRating"></span>
+        <span class="bnb-review-hidden" itemprop="reviewRating">5</span>
         <span class="bnb-review-type">Trip Type: <?= $bcr_type; ?></span>
       </div>
       <div class="bnb-review-content">
         <span class="bnb-review-title">
           <strong><a href="<?= $bcr_link; ?>"><span itemprop="name"><?= $bcr_title; ?></span></a></strong>
         </span><br />
-        
-        
-        
+
+
+
         <span class="bnb-review-body">
         <span itemprop="reviewBody">
           <?php
@@ -130,7 +120,7 @@ function bcr_all_func( $atts ) {
         echo "<span id=\"bnb-review-body-more-{$review->ID}\">... </span><a class=\"show-more-content\" title=\"{$review->ID}\">More</a>";
         }?>
         </span>
-        
+
     <div class="bnb-bottom-info">
         <?php
         // Check if date is hidden
@@ -142,7 +132,7 @@ function bcr_all_func( $atts ) {
         </span>
         <?php endif; ?>
     </div><!--bnb-bottom-info-->
-        
+
       </div>
     </div>
   </li>

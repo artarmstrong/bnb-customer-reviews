@@ -46,6 +46,10 @@ bnb-review-rating img {
 	font-size:14px;
 }
 
+.bnb-review-hidden {
+  display: none;
+}
+
 .bnb-bottom-info {
 	float:right;
 	font-style:italic;
